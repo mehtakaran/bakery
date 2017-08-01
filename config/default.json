@@ -1,0 +1,21 @@
+{
+  "port": 8888,
+  "jwt":{
+    "sk": "1DF38E4E2358492445C73F77C234F",
+    "exp": {
+      "expiresIn": "12h"
+    }
+  },
+  "sequelize": {
+    "database" : "bakery",
+    "user" : "root",
+    "password" : "",
+    "host" : "localhost",
+    "dialect": "mysql",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "idle": 10000
+    }
+  }
+}

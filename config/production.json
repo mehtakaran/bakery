@@ -1,0 +1,22 @@
+{
+    "port": 3001,
+    "auth": {
+        "userName": "developer",
+        "passCode": "CxX77E589"
+    },
+    "mysql": {
+        "connectionLimit" : 50,
+        "waitForConnections" : true,
+        "queueLimit" : 50,
+        "acquireTimeout" : 172800000,
+        "host" : "13.55.82.206",
+        "user" : "development",
+        "port" : 3306,
+        "password" : "Development$007",
+        "database" : "shroogal",
+        "dateStrings" : "date"
+    },
+    "mongo": {
+        "dbURI": "mongodb://shroogal:Shroogal$007@52.63.116.9:21317/Shroogal"
+    }
+}
