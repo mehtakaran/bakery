@@ -23,10 +23,13 @@ class Product {
           let data = [];
           let prevTotal = obj.items;
           let remain;
+          let totalAmount = 0;
           row.forEach((v) => {
             let d = this.productPacks(prevTotal, v.get("packs"));
             d.packSize = v.get("packs");
-            d.price = v.get("price") * d.qty;
+            d.price = Math.round((v.get("price") * d.qty) * 100) / 100;
+            console.log(d.price);
+            totalAmount = Math.round((totalAmount + d.price) * 100) / 100;
             data.push(d);
             prevTotal = d.rem;
             remain = d;
@@ -35,7 +38,10 @@ class Product {
             reject("This quantity cannot be accepeted as it does not meet the availble package size");
           }
           else
-            resolve(data);
+            resolve({
+              packs: data,
+              amount: totalAmount
+            });
         })
         .catch((err) => {
           reject(err);
@@ -71,7 +77,10 @@ class Product {
           row.forEach((v) => {
             let d = {
               productId: v.get("productId"),
-              productName: v.get("productName")
+              productName: v.get("productName"),
+              price: 0,
+              quant: 0,
+              msg: ""
             }
             data.push(d);
           });

@@ -18,6 +18,8 @@ const express       = require('express'),
       config        = require('config'),
       apiRoutes     = require('./api/routes');
 
+app.use(express.static('public'));
+
 // gzip compression
 app.use(compression());
 // securing the app
