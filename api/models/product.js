@@ -28,7 +28,6 @@ class Product {
             let d = this.productPacks(prevTotal, v.get("packs"));
             d.packSize = v.get("packs");
             d.price = Math.round((v.get("price") * d.qty) * 100) / 100;
-            console.log(d.price);
             totalAmount = Math.round((totalAmount + d.price) * 100) / 100;
             data.push(d);
             prevTotal = d.rem;
